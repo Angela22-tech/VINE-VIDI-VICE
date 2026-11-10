@@ -26,3 +26,4 @@ I am **learning GitHub** step by step.
 - Created a repository
 - Made a commit
 - Merged a pull request
+#learn how to clean a read me #
