@@ -13,3 +13,16 @@ I am **learning GitHub** step by step.
 - Created a repository
 - Made a commit
 - Merged a pull request
+# VINE-VIDI-VICE
+
+Learning everything about GitHub, one step at a time.
+
+## My GitHub Journey
+
+I am **learning GitHub** step by step.
+
+### What I've done
+
+- Created a repository
+- Made a commit
+- Merged a pull request
