@@ -1,29 +1,39 @@
 # VINE-VIDI-VICE
-learn all updates and and anything about github
-Teach me something new
-edit-readme
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Market News</title>
+  <style>
+    body { font-family: sans-serif; background: #111; color: #eee; max-width: 600px; margin: auto; padding: 16px; }
+    a { color: #6cf; display: block; padding: 8px 0; }
+    .row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #333; }
+  </style>
+</head>
+<body>
+  <h1>My Market News</h1>
 
-anything-concerning-update
+  <h2>Live crypto prices</h2>
+  <div id="prices">Loading...</div>
 
-# My GitHub Journey
+  <h2>Stock news</h2>
+  <a href="https://finance.yahoo.com">Yahoo Finance</a>
+  <a href="https://www.cnbc.com/markets/">CNBC Markets</a>
 
-I am **learning GitHub** step by step.
+  <h2>Crypto news</h2>
+  <a href="https://www.coindesk.com">CoinDesk</a>
+  <a href="https://cointelegraph.com">Cointelegraph</a>
 
-## What I've done
-- Created a repository
-- Made a commit
-- Merged a pull request
-# VINE-VIDI-VICE
-
-Learning everything about GitHub, one step at a time.
-
-## My GitHub Journey
-
-I am **learning GitHub** step by step.
-
-### What I've done
-
-- Created a repository
-- Made a commit
-- Merged a pull request
-#learn how to clean a read me #
+  <script>
+    fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana&vs_currencies=usd")
+      .then(r => r.json())
+      .then(d => {
+        document.getElementById("prices").innerHTML = Object.keys(d)
+          .map(k => `<div class="row"><span>${k}</span><span>$${d[k].usd}</span></div>`)
+          .join("");
+      })
+      .catch(() => { document.getElementById("prices").textContent = "Could not load prices."; });
+  </script>
+</body>
+</html>
